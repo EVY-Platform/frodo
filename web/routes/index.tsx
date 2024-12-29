@@ -1,5 +1,6 @@
 import Canva from "../components/Layout/Canva.tsx";
 import InfoRow, { InfoRowConfiguration } from "../components/Rows/InfoRow.tsx";
+import Input from "../components/Layout/Input.tsx";
 import Logo from "../components/Logo.tsx";
 import Panel from "../components/Layout/Panel.tsx";
 import TextRow, { TextRowConfiguration } from "../components/Rows/TextRow.tsx";
@@ -23,6 +24,16 @@ export default function Home() {
 						<InfoRow />
 						<TextRow />
 						<TextActionRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
+						<TextRow />
 					</Panel>
 				</div>
 				<div class="flex-1">
@@ -35,7 +46,14 @@ export default function Home() {
 						{InfoRowConfiguration.map((line) => {
 							switch (line.type) {
 								case "text":
-									return <p>Text input for {line.id}</p>;
+									return (
+										<div class="p-2">
+											<Input
+												identifier={line.id}
+												title={line.id}
+											/>
+										</div>
+									);
 								default:
 									throw new Error(
 										"Invalid configuration type"

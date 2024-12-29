@@ -7,6 +7,7 @@ export default {
 			colors: {
 				"evy-grey": "#878787",
 				"evy-blue": "#3478F6",
+				"evy-border": "#B9B9BC",
 			},
 		},
 	},
