@@ -10,7 +10,7 @@ export default function InfoRow() {
 	);
 }
 
-export const InfoRowConfiguration = [
+export const configuration = [
 	{ id: "title", type: "text" },
 	{ id: "info", type: "text" },
 ];

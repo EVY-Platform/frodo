@@ -1,11 +1,19 @@
 import Canva from "../components/Layout/Canva.tsx";
-import InfoRow, { InfoRowConfiguration } from "../components/Rows/InfoRow.tsx";
 import Input from "../components/Layout/Input.tsx";
 import Logo from "../components/Logo.tsx";
 import Panel from "../components/Layout/Panel.tsx";
-import TextRow, { TextRowConfiguration } from "../components/Rows/TextRow.tsx";
+
+import InfoRow, {
+	configuration as infoRowConfiguration,
+} from "../components/Rows/InfoRow.tsx";
+import InputListRow, {
+	configuration as inputListRowConfiguration,
+} from "../components/Rows/InputListRow.tsx";
+import TextRow, {
+	configuration as textRowConfiguration,
+} from "../components/Rows/TextRow.tsx";
 import TextActionRow, {
-	TextActionRowConfiguration,
+	configuration as textActionRowConfiguration,
 } from "../components/Rows/TextActionRow.tsx";
 
 export default function Home() {
@@ -24,7 +32,7 @@ export default function Home() {
 						<InfoRow />
 						<TextRow />
 						<TextActionRow />
-						<TextRow />
+						<InputListRow />
 						<TextRow />
 						<TextRow />
 						<TextRow />
@@ -37,13 +45,12 @@ export default function Home() {
 					</Panel>
 				</div>
 				<div class="flex-1">
-					<p class={headingStyles}>Canva</p>
 					<Canva />
 				</div>
 				<div class={`${panelStyles} border-l`}>
 					<p class={headingStyles}>Row configuration</p>
 					<Panel>
-						{InfoRowConfiguration.map((line) => {
+						{infoRowConfiguration.map((line) => {
 							switch (line.type) {
 								case "text":
 									return (

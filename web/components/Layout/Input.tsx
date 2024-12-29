@@ -3,9 +3,11 @@ import { PageProps } from "$fresh/server.ts";
 export default function Input({ title, identifier }: PageProps) {
 	return (
 		<form class="grid">
-			<label for={identifier} class="block mb-2 capitalize">
-				{title}
-			</label>
+			{title && (
+				<label for={identifier} class="block mb-2 capitalize">
+					{title}
+				</label>
+			)}
 			<input
 				type="text"
 				id={identifier}

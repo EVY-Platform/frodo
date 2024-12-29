@@ -10,7 +10,7 @@ export default function TextRow() {
 	);
 }
 
-export const TextRowConfiguration = [
+export const configuration = [
 	{ id: "title", type: "text" },
 	{ id: "text", type: "text" },
 ];
