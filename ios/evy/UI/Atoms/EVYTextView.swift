@@ -107,7 +107,7 @@ struct EVYTextView: View {
 		case .info:
 			return Text(input)
 				.font(.evy)
-				.foregroundStyle(Constants.textColor)
+				.foregroundStyle(Constants.textGreyColor)
 		case .button:
 			return Text(input)
 				.font(.evy)
