@@ -11,7 +11,7 @@ export default function Input({ title, identifier }: PageProps) {
 			<input
 				type="text"
 				id={identifier}
-				class="w-full text-sm rounded p-2 bg-gray-50 border border-evy-border focus:evy-blue focus:border-evy-blue"
+				class="w-full text-sm rounded p-2 bg-gray-50 border border-evy-border focus-visible:outline-none"
 				required
 			/>
 		</form>

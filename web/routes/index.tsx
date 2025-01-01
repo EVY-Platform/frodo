@@ -3,18 +3,21 @@ import Input from "../components/Layout/Input.tsx";
 import Logo from "../components/Logo.tsx";
 import Panel from "../components/Layout/Panel.tsx";
 
-import InfoRow, {
-	configuration as infoRowConfiguration,
-} from "../components/Rows/InfoRow.tsx";
-import InputListRow, {
-	configuration as inputListRowConfiguration,
-} from "../components/Rows/InputListRow.tsx";
-import TextRow, {
-	configuration as textRowConfiguration,
-} from "../components/Rows/TextRow.tsx";
-import TextActionRow, {
-	configuration as textActionRowConfiguration,
-} from "../components/Rows/TextActionRow.tsx";
+import InfoRow from "../components/Rows/View/InfoRow.tsx";
+import InputListRow from "../components/Rows/View/InputListRow.tsx";
+import TextRow from "../components/Rows/View/TextRow.tsx";
+
+import ButtonRow from "../components/Rows/Action/ButtonRow.tsx";
+import TextActionRow from "../components/Rows/Action/TextActionRow.tsx";
+
+import CalendarRow from "../components/Rows/Edit/CalendarRow.tsx";
+import DropdownRow from "../components/Rows/Edit/DropdownRow.tsx";
+import InlinePickerRow from "../components/Rows/Edit/InlinePickerRow.tsx";
+import InputRow from "../components/Rows/Edit/InputRow.tsx";
+import SearchRow from "../components/Rows/Edit/SearchRow.tsx";
+import SelectPhotoRow from "../components/Rows/Edit/SelectPhotoRow.tsx";
+import TextAreaRow from "../components/Rows/Edit/TextAreaRow.tsx";
+import TextSelectRow from "../components/Rows/Edit/TextSelectRow.tsx";
 
 export default function Home() {
 	const panelStyles = "w-72 overflow-scroll [&::-webkit-scrollbar]:hidden";
@@ -29,19 +32,24 @@ export default function Home() {
 				<div class={`${panelStyles} border-r`}>
 					<p class={headingStyles}>Rows</p>
 					<Panel border="border-b border-t">
+						{/* View rows */}
 						<InfoRow />
 						<TextRow />
-						<TextActionRow />
 						<InputListRow />
-						<TextRow />
-						<TextRow />
-						<TextRow />
-						<TextRow />
-						<TextRow />
-						<TextRow />
-						<TextRow />
-						<TextRow />
-						<TextRow />
+
+						{/* Action rows */}
+						<ButtonRow />
+						<TextActionRow />
+
+						{/* Edit rows */}
+						<CalendarRow />
+						<DropdownRow />
+						<InlinePickerRow />
+						<InputRow />
+						<SearchRow />
+						<SelectPhotoRow />
+						<TextAreaRow />
+						<TextSelectRow />
 					</Panel>
 				</div>
 				<div class="flex-1">
@@ -50,7 +58,11 @@ export default function Home() {
 				<div class={`${panelStyles} border-l`}>
 					<p class={headingStyles}>Row configuration</p>
 					<Panel>
-						{infoRowConfiguration.map((line) => {
+						{/* Todo: build dynamic configuraiton system */}
+						{[
+							{ id: "title", type: "text" },
+							{ id: "info", type: "text" },
+						].map((line) => {
 							switch (line.type) {
 								case "text":
 									return (

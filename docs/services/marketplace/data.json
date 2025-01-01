@@ -100,7 +100,7 @@
 	"item": {
 		"id": "item",
 		"title": "Amazing Fridge",
-		"photo_ids": ["printer", "printer_logo"],
+		"photo_ids": [],
 		"price": {
 			"currency": "AUD",
 			"value": 250

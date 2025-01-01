@@ -65,18 +65,18 @@ struct EVYSelectPhoto: View {
                         EVYSelectPhotoCarousel(imageNames: photos)
                         EVYSelectPhotoButton(fullScreen: false,
                                              icon: icon,
-                                             subtitle: subtitle,
+											 content: content,
                                              photos: $photos)
                     }
                 }
             } else {
                 EVYSelectPhotoButton(fullScreen: true,
                                      icon: icon,
-                                     subtitle: subtitle,
+									 content: content,
                                      photos: $photos)
             }
             
-			EVYTextView(content, style: .info)
+			EVYTextView(subtitle, style: .info)
                 .padding(.vertical, Constants.padding)
         }
     }
@@ -85,7 +85,7 @@ struct EVYSelectPhoto: View {
 struct EVYSelectPhotoButton: View {
     let fullScreen: Bool
     let icon: String
-    let subtitle: String
+    let content: String
     
     @State private var selectedItem: PhotosPickerItem?
     @Binding var photos: [String]
@@ -98,7 +98,7 @@ struct EVYSelectPhotoButton: View {
                 label: {
                     let stack = VStack {
                         EVYTextView(icon)
-                        EVYTextView(subtitle)
+                        EVYTextView(content)
                     }
                     if fullScreen {
                         stack
@@ -181,9 +181,9 @@ class ImageManager {
 	} view: {
 		try! await EVY.createItem()
 		return EVYSelectPhoto(title: "Photos Title",
-							  subtitle: "A great subtitle",
+							  subtitle: "Photos: {count(item.photo_ids)}/10 - Chose your listing’s main photo first.",
 							  icon: "::photo.badge.plus.fill::",
-							  content: "Photos: {count(item.photo_ids)}/10 - Chose your listing’s main photo first.",
+							  content: "A great subtitle",
 							  data: "{item.photo_ids}",
 							  destination: "{item.photo_ids}")
 	}

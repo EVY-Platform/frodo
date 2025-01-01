@@ -5,9 +5,11 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				"evy-grey": "#878787",
+				"evy-light": "#878787",
 				"evy-blue": "#3478F6",
 				"evy-border": "#B9B9BC",
+				"evy-gray": "#3C3C42",
+				"evy-light-gray": "#F5F5F5",
 			},
 		},
 	},

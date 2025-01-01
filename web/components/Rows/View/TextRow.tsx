@@ -9,8 +9,3 @@ export default function TextRow() {
 		</div>
 	);
 }
-
-export const configuration = [
-	{ id: "title", type: "text" },
-	{ id: "text", type: "text" },
-];

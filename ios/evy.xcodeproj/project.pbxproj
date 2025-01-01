@@ -248,7 +248,6 @@
 			children = (
 				7320F58F2C2FF8F000297C48 /* EVYInfoRow.swift */,
 				73CB09532C7609E5008F7D2C /* EVYInputListRow.swift */,
-				7320F5992C300B8B00297C48 /* EVYTextActionRow.swift */,
 				736D105E2B78CDDB00503C4D /* EVYTextRow.swift */,
 			);
 			path = View;
@@ -258,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				73EDC87C2B8F37E800304DD8 /* EVYButtonRow.swift */,
+				7320F5992C300B8B00297C48 /* EVYTextActionRow.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
