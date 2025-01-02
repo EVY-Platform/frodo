@@ -59,6 +59,10 @@ struct EVYCalendarRow: View, EVYRowProtocol {
 	}
     
     var body: some View {
+		if view.content.title.count > 0 {
+			EVYTextView(view.content.title)
+				.padding(.vertical, Constants.padding)
+		}
         EVYCalendar(primary: view.content.primary,
                     secondary: view.content.secondary)
     }

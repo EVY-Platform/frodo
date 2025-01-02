@@ -67,10 +67,10 @@ export default function Home() {
 								case "text":
 									return (
 										<div class="p-2">
-											<Input
-												identifier={line.id}
-												title={line.id}
-											/>
+											<label class="block mb-2 capitalize">
+												{line.id}
+											</label>
+											<Input />
 										</div>
 									);
 								default:

@@ -1,17 +1,9 @@
-import { PageProps } from "$fresh/server.ts";
-
-export default function Input({ title, identifier }: PageProps) {
+export default function Input() {
 	return (
 		<form class="grid">
-			{title && (
-				<label for={identifier} class="block mb-2 capitalize">
-					{title}
-				</label>
-			)}
 			<input
 				type="text"
-				id={identifier}
-				class="w-full text-sm rounded p-2 bg-gray-50 border border-evy-border focus-visible:outline-none"
+				class="w-full text-sm rounded p-2 border border-evy-border border-opacity-50 focus-visible:outline-none"
 				required
 			/>
 		</form>

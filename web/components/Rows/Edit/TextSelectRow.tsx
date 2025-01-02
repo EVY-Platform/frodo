@@ -1,7 +1,7 @@
 export default function TextSelectRow() {
 	return (
 		<div class="p-2">
-			<p>Text select row title</p>
+			<p class="pb-2">Text select row title</p>
 			<div class="flex justify-between">
 				<p class="text-evy-light">Text</p>
 				<input

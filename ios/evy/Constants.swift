@@ -33,7 +33,7 @@ struct Constants {
     
     static let borderWidth: CGFloat = 1.0
     static let thinBorderWidth: CGFloat = 0.5
-    static let borderColor: Color = Color(#colorLiteral(red: 0.725489974, green: 0.7254903913, blue: 0.7340979576, alpha: 1))
+    static let borderColor: Color = Color(#colorLiteral(red: 0.7267977595, green: 0.7267977595, blue: 0.7267977595, alpha: 1))
     static let borderOpacity: CGFloat = 0.5
 	
 	static let listRowHeight: CGFloat = base*12

@@ -2,7 +2,7 @@ export default function InlinePickerRow() {
 	const sharedStyles = "rounded-md text-sm px-3 py-3";
 	return (
 		<div class="p-2">
-			<p>Inline picker row</p>
+			<p class="pb-2">Inline picker row</p>
 			<div class="p-2 flex gap-2">
 				<button
 					type="button"
