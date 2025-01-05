@@ -5,7 +5,7 @@
 Documentation is available at the global EVY level as well as per services provided on the platform
 
 -   EVY
-    -   [Types Docs](./evy/sddata/types.md)
+    -   [Types Docs](./evy/types.md)
     -   [Data models Docs](./evy/sddata/data.md)
     -   [Functions Docs](./evy/sddata/functions.md)
     -   [Server Driven UI Docs](./evy/sdui/readme.md)
