@@ -37,7 +37,11 @@ struct EVYSelectPhotoRow: View, EVYRowProtocol {
 			return true
 		}
 		
-		return view.content.photos.count >= edit.validation.minAmount ?? 1
+		if edit.validation.minAmount == nil {
+			return true
+		}
+		
+		return view.content.photos.count >= edit.validation.minAmount!
 	}
 	
 	func incompleteMessages() -> [String] {

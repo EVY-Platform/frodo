@@ -36,7 +36,12 @@ struct EVYTextAreaRow: View, EVYRowProtocol {
 		if edit.validation.minValue != nil {
 			return Int(view.content.value) ?? 0 >= edit.validation.minValue!
 		}
-		return view.content.value.count >= edit.validation.minCharacters ?? 1
+		
+		if edit.validation.minCharacters != nil {
+			return view.content.value.count >= edit.validation.minCharacters!
+		}
+		
+		return true
 	}
 	
 	func incompleteMessages() -> [String] {

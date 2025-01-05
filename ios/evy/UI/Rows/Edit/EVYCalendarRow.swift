@@ -32,10 +32,14 @@ struct EVYCalendarRow: View, EVYRowProtocol {
 		if !edit.validation.required {
 			return true
 		}
+		
+		if edit.validation.minAmount == nil {
+			return true
+		}
 
 		do {
 			let storedValue = try EVY.getDataFromText(edit.destination!)
-			let min = edit.validation.minAmount ?? 1
+			let min = edit.validation.minAmount!
 			switch storedValue {
 			case let .array(timeslots):
 				let selectedTimeslots = timeslots.filter {

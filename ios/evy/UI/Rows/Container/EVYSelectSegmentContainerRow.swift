@@ -32,10 +32,12 @@ struct EVYSelectSegmentContainerRow: View, EVYRowProtocol {
 	}
 	
 	func complete() -> Bool {
+		if edit.validation.minAmount == nil { return true }
+		
 		let completeChildren = view.content.children.filter {
 			$0.child.complete()
 		}
-		return completeChildren.count >= Int(edit.validation.minAmount ?? 1)
+		return completeChildren.count >= edit.validation.minAmount!
 	}
 	
 	func incompleteMessages() -> [String] {

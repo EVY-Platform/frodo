@@ -37,8 +37,10 @@ struct EVYInputRow: View, EVYRowProtocol {
 			let storedValue = try EVY.getDataFromText(edit.destination!)
 			if edit.validation.minValue != nil {
 				return Int(storedValue.toString()) ?? 0 >= edit.validation.minValue!
+			} else if edit.validation.minCharacters != nil {
+				return storedValue.toString().count >= edit.validation.minCharacters!
 			}
-			return storedValue.toString().count >= edit.validation.minCharacters ?? 1
+			return true
 		} catch {
 			return false
 		}
