@@ -7,6 +7,7 @@ import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Draggable from "./islands/Draggable.tsx";
 import * as $PanelOfRows from "./islands/PanelOfRows.tsx";
+import * as $PanelRowConfiguration from "./islands/PanelRowConfiguration.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -18,6 +19,7 @@ const manifest = {
   islands: {
     "./islands/Draggable.tsx": $Draggable,
     "./islands/PanelOfRows.tsx": $PanelOfRows,
+    "./islands/PanelRowConfiguration.tsx": $PanelRowConfiguration,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
