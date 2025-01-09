@@ -1,4 +1,4 @@
-import Input from "../../Layout/Input.tsx";
+import Input from "../../../components/Layout/Input.tsx";
 
 export default function InputRow() {
 	return (

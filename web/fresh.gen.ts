@@ -5,7 +5,8 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
-
+import * as $Draggable from "./islands/Draggable.tsx";
+import * as $PanelOfRows from "./islands/PanelOfRows.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -14,7 +15,10 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/index.tsx": $index,
   },
-  islands: {},
+  islands: {
+    "./islands/Draggable.tsx": $Draggable,
+    "./islands/PanelOfRows.tsx": $PanelOfRows,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 
