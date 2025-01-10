@@ -48,12 +48,12 @@ export default function PanelOfRows({
 		TextAreaRow,
 		TextSelectRow,
 	].map((Row) => (
-		<Draggable>
+		<Draggable id={Row.name}>
 			<Row />
 		</Draggable>
 	));
 	return (
-		<div class={`${width} ${overflowStyles} ${panelStyles}`}>
+		<div class={`${width} ${panelStyles} ${overflowStyles}`}>
 			<p class={titleStyles}>Rows</p>
 			<List>{draggableChildren}</List>
 		</div>

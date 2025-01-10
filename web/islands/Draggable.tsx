@@ -8,7 +8,7 @@ const offset = signal({ x: 0, y: 0 });
 const draggingZIndex = 100;
 const defaultZIndex = 1;
 
-export default function Draggable({ children, identifier }: PageProps) {
+export default function Draggable({ children }: PageProps) {
 	const localPosition = useSignal({ x: 0, y: 0 });
 	const localDragging = useSignal(false);
 
