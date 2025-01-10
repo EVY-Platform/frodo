@@ -48,7 +48,7 @@ export default function PanelOfRows({
 		TextAreaRow,
 		TextSelectRow,
 	].map((Row) => (
-		<Draggable id={Row.name}>
+		<Draggable>
 			<Row />
 		</Draggable>
 	));
