@@ -20,14 +20,9 @@ import TextSelectRow from "../components/Rows/Edit/TextSelectRow.tsx";
 interface Props {
 	width: string;
 	panelStyles: string;
-	titleStyles: string;
 }
 
-export default function PanelOfRows({
-	width,
-	titleStyles,
-	panelStyles,
-}: Props) {
+export default function PanelOfRows({ width, panelStyles }: Props) {
 	let overflowStyles = dragging.value
 		? "overflow-visible"
 		: "overflow-y-scroll";
@@ -54,7 +49,7 @@ export default function PanelOfRows({
 	));
 	return (
 		<div class={`${width} ${panelStyles} ${overflowStyles}`}>
-			<p class={titleStyles}>Rows</p>
+			<h1>Rows</h1>
 			<List>{draggableChildren}</List>
 		</div>
 	);

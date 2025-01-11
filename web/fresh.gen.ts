@@ -5,9 +5,10 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $index from "./routes/index.tsx";
+import * as $Canva from "./islands/Canva.tsx";
 import * as $Draggable from "./islands/Draggable.tsx";
+import * as $PanelOfConfiguration from "./islands/PanelOfConfiguration.tsx";
 import * as $PanelOfRows from "./islands/PanelOfRows.tsx";
-import * as $PanelRowConfiguration from "./islands/PanelRowConfiguration.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -17,9 +18,10 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/Canva.tsx": $Canva,
     "./islands/Draggable.tsx": $Draggable,
+    "./islands/PanelOfConfiguration.tsx": $PanelOfConfiguration,
     "./islands/PanelOfRows.tsx": $PanelOfRows,
-    "./islands/PanelRowConfiguration.tsx": $PanelRowConfiguration,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

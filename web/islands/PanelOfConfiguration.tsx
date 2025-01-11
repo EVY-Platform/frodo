@@ -6,14 +6,9 @@ import { dragging } from "./Draggable.tsx";
 interface Props {
 	width: string;
 	panelStyles: string;
-	titleStyles: string;
 }
 
-export default function PanelOfRows({
-	width,
-	titleStyles,
-	panelStyles,
-}: Props) {
+export default function PanelOfConfiguration({ width, panelStyles }: Props) {
 	// Todo: build dynamic configuraiton system
 	const children = [
 		{ id: "title", type: "text" },
@@ -31,12 +26,11 @@ export default function PanelOfRows({
 				throw new Error("Invalid configuration type");
 		}
 	});
-	let displayStyles = dragging.value ? "hidden" : "";
 
 	return (
 		<div class={`${width} ${panelStyles}`}>
-			<p class={titleStyles}>Row configuration</p>
-			<div class={displayStyles}>
+			<h1>Row configuration</h1>
+			<div class={dragging.value ? "hidden" : ""}>
 				<List>{children}</List>
 			</div>
 		</div>
