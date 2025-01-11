@@ -1,4 +1,12 @@
+import { dragging, configuration } from "../../Draggable.tsx";
+
 export default function TextAreaRow() {
+	if (dragging.value === "TextAreaRow") {
+		configuration.value = [
+			{ id: "title", type: "text" },
+			{ id: "placeholder", type: "text" },
+		];
+	}
 	return (
 		<div class="p-2">
 			<p class="pb-2">Text area row title</p>

@@ -1,7 +1,7 @@
 import List from "../components/Layout/List.tsx";
 import Input from "../components/Layout/Input.tsx";
 
-import { dragging } from "./Draggable.tsx";
+import { dragging, configuration } from "./Draggable.tsx";
 
 interface Props {
 	width: string;
@@ -9,11 +9,7 @@ interface Props {
 }
 
 export default function PanelOfConfiguration({ width, panelStyles }: Props) {
-	// Todo: build dynamic configuraiton system
-	const children = [
-		{ id: "title", type: "text" },
-		{ id: "info", type: "text" },
-	].map((line) => {
+	const children = configuration.value.map((line) => {
 		switch (line.type) {
 			case "text":
 				return (

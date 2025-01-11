@@ -1,6 +1,11 @@
 import Input from "../../../components/Layout/Input.tsx";
 
+import { dragging, configuration } from "../../Draggable.tsx";
+
 export default function DropdownRow() {
+	if (dragging.value === "DropdownRow") {
+		configuration.value = [{ id: "title", type: "text" }];
+	}
 	return (
 		<div class="p-2">
 			<p class="pb-2">Dropdown row</p>

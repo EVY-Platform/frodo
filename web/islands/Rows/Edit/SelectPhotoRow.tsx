@@ -1,4 +1,12 @@
+import { dragging, configuration } from "../../Draggable.tsx";
+
 export default function SelectPhotoRow() {
+	if (dragging.value === "SelectPhotoRow") {
+		configuration.value = [
+			{ id: "content", type: "text" },
+			{ id: "subtitle", type: "text" },
+		];
+	}
 	return (
 		<div class="p-2">
 			<p class="pb-2">Select photo row</p>

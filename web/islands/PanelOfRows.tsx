@@ -1,21 +1,21 @@
 import List from "../components/Layout/List.tsx";
 import Draggable, { dragging } from "./Draggable.tsx";
 
-import InfoRow from "../components/Rows/View/InfoRow.tsx";
-import InputListRow from "../components/Rows/View/InputListRow.tsx";
-import TextRow from "../components/Rows/View/TextRow.tsx";
+import InfoRow from "./Rows/View/InfoRow.tsx";
+import InputListRow from "./Rows/View/InputListRow.tsx";
+import TextRow from "./Rows/View/TextRow.tsx";
 
-import ButtonRow from "../components/Rows/Action/ButtonRow.tsx";
-import TextActionRow from "../components/Rows/Action/TextActionRow.tsx";
+import ButtonRow from "./Rows/Action/ButtonRow.tsx";
+import TextActionRow from "./Rows/Action/TextActionRow.tsx";
 
-import CalendarRow from "../components/Rows/Edit/CalendarRow.tsx";
-import DropdownRow from "../components/Rows/Edit/DropdownRow.tsx";
-import InlinePickerRow from "../components/Rows/Edit/InlinePickerRow.tsx";
-import InputRow from "../components/Rows/Edit/InputRow.tsx";
-import SearchRow from "../components/Rows/Edit/SearchRow.tsx";
-import SelectPhotoRow from "../components/Rows/Edit/SelectPhotoRow.tsx";
-import TextAreaRow from "../components/Rows/Edit/TextAreaRow.tsx";
-import TextSelectRow from "../components/Rows/Edit/TextSelectRow.tsx";
+import CalendarRow from "./Rows/Edit/CalendarRow.tsx";
+import DropdownRow from "./Rows/Edit/DropdownRow.tsx";
+import InlinePickerRow from "./Rows/Edit/InlinePickerRow.tsx";
+import InputRow from "./Rows/Edit/InputRow.tsx";
+import SearchRow from "./Rows/Edit/SearchRow.tsx";
+import SelectPhotoRow from "./Rows/Edit/SelectPhotoRow.tsx";
+import TextAreaRow from "./Rows/Edit/TextAreaRow.tsx";
+import TextSelectRow from "./Rows/Edit/TextSelectRow.tsx";
 
 interface Props {
 	width: string;
@@ -23,7 +23,7 @@ interface Props {
 }
 
 export default function PanelOfRows({ width, panelStyles }: Props) {
-	let overflowStyles = dragging.value
+	let overflowStyles = !!dragging.value
 		? "overflow-visible"
 		: "overflow-y-scroll";
 	const draggableChildren = [
@@ -43,7 +43,7 @@ export default function PanelOfRows({ width, panelStyles }: Props) {
 		TextAreaRow,
 		TextSelectRow,
 	].map((Row) => (
-		<Draggable id={Row.name}>
+		<Draggable identifier={Row.name}>
 			<Row />
 		</Draggable>
 	));

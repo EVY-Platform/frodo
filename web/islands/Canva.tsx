@@ -1,33 +1,40 @@
-import { useSignal } from "@preact/signals";
-
-import List from "../components/Layout/List.tsx";
-import Draggable, { dragging } from "./Draggable.tsx";
-
 export default function Canva() {
-	const rows = useSignal([]);
-
-	let overflowStyles = dragging.value
-		? "overflow-visible"
-		: "overflow-y-scroll";
-
-	const draggableChildren = rows.value.map((Row) => (
-		<Draggable>
-			<Row />
-		</Draggable>
-	));
-
 	return (
-		<div class="relative">
+		<div class="overflow-scroll flex h-[calc(100vh-92px)] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
 			<img
-				class="m-auto h-[calc(100vh-92px)] overflow-y-scroll"
 				src="/phone.svg"
 				alt="phone"
+				class="px-24 h-[calc(100vh-92px)]"
 			/>
-			<div
-				class={`m-auto rounded-3xl -mt-[calc(100vh-180px)] w-[calc(1/2.7*100vh)] h-[calc(100vh-220px)] ${overflowStyles}`}
-			>
-				<List>{draggableChildren}</List>
-			</div>
+			<img
+				src="/phone.svg"
+				alt="phone"
+				class="px-24 h-[calc(100vh-92px)]"
+			/>
+			<img
+				src="/phone.svg"
+				alt="phone"
+				class="px-24 h-[calc(100vh-92px)]"
+			/>
 		</div>
 	);
 }
+
+/*
+const rows = useSignal([]);
+
+const draggableChildren = rows.value.map((Row) => (
+	<Draggable>
+		<Row />
+	</Draggable>
+));
+
+
+<div class="relative px-24 h-[calc(100vh-92px)]">
+	<img src="/phone.svg" alt="phone" />
+	<div
+		class={`m-auto rounded-3xl -mt-[calc(100vh-180px)] w-[calc(1/2.7*100vh)] h-[calc(100vh-220px)] ${overflowStyles}`}
+	>
+		<List>{draggableChildren}</List>
+	</div>
+</div> */

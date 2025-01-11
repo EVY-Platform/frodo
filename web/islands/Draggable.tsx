@@ -1,14 +1,17 @@
 import { signal, useSignal, effect } from "@preact/signals";
 import { PageProps } from "$fresh/server.ts";
 
-export const dragging = signal(false);
+export const dragging = signal(null);
+
+// An object of configuration options for the given row, see each row for implementation
+export const configuration = signal([]);
 
 const position = signal({ x: 0, y: 0 });
 const offset = signal({ x: 0, y: 0 });
 const draggingZIndex = 100;
 const defaultZIndex = 1;
 
-export default function Draggable({ children }: PageProps) {
+export default function Draggable({ children, identifier }: PageProps) {
 	const localPosition = useSignal({ x: 0, y: 0 });
 	const localDragging = useSignal(false);
 
@@ -20,7 +23,9 @@ export default function Draggable({ children }: PageProps) {
 	}, [position]);
 
 	const handleMouseDown = (e: MouseEvent) => {
-		dragging.value = localDragging.value = true;
+		dragging.value = identifier;
+		localDragging.value = true;
+		configuration.value = [];
 		position.value = { x: 0, y: 0 };
 		offset.value = {
 			x: e.clientX - localPosition.value.x,
@@ -33,7 +38,8 @@ export default function Draggable({ children }: PageProps) {
 			x: 0,
 			y: 0,
 		};
-		dragging.value = localDragging.value = false;
+		dragging.value = null;
+		localDragging.value = false;
 	};
 
 	const handleMouseMove = (e: MouseEvent) => {

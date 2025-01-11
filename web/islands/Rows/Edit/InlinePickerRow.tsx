@@ -1,4 +1,9 @@
+import { dragging, configuration } from "../../Draggable.tsx";
+
 export default function InlinePickerRow() {
+	if (dragging.value === "InlinePickerRow") {
+		configuration.value = [{ id: "title", type: "text" }];
+	}
 	const sharedStyles = "rounded-md text-sm px-3 py-3";
 	return (
 		<div class="p-2">
