@@ -1,6 +1,13 @@
 export default function Canva() {
 	return (
-		<div class="overflow-scroll flex h-[calc(100vh-92px)] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+		<div
+			class="select-none drag-none overflow-scroll flex h-[calc(100vh-92px)]"
+			style={{
+				"&::-webkit-scrollbar": "hidden",
+				"-ms-overflow-style": "none",
+				"scrollbar-width": "none",
+			}}
+		>
 			<img
 				src="/phone.svg"
 				alt="phone"
